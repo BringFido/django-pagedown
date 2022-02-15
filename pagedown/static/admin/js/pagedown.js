@@ -11,14 +11,14 @@
                 DjangoPagedown.createEditor(el);
 
                 // Hack 1! Remove second image bar - this seems to be due to the django
-                // admin javascript copying the form fromt he first field which
+                // admin javascript copying the form from the first field which
                 // means that Pagedown has already rendered the image bar once
                 var button_bar = $(this).parents(".wmd-panel").find(".wmd-button-row");
                 if ( button_bar.length > 1 ) {
                     button_bar[0].remove();
                 }
 
-                // Hack 2! There are no add or remove events triggered by the django
+                // Hack 2! There are no add or remove events triggered by django
                 // so this is workaround to remove Pagedown on removal of inline
                 var container = $(this).parents(".inline-related");
                 $(container).find(".inline-deletelink").click(function(){
